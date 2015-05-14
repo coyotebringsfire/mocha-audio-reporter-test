@@ -1,0 +1,22 @@
+{
+  "name": "mocha-audio-reporter-test",
+  "version": "0.0.1",
+  "description": "tests for mocha-audio-reporter",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R mocha-audio-reporter index.js"
+  },
+  "keywords": [
+    "mocha",
+    "audio",
+    "reporter"
+  ],
+  "author": "coyotebringsfire <aumkara@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "debug": "^2.1.3",
+    "mocha-audio-reporter": "0.0.2",
+    "mocha-multi": "^0.7.1",
+    "should": "^6.0.1"
+  }
+}

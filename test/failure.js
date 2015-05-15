@@ -11,7 +11,7 @@ describe("audioreporter test failures", function() {
 				should.fail();
 				done();
 				next();
-			}, 200);
+			}, 500);
 		});
 	}, function(err) {
 		debug("done");

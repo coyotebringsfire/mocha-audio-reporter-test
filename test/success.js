@@ -10,7 +10,7 @@ describe("audioreporter test passes", function() {
 			setTimeout(function() {
 				done();
 				next();
-			}, 200);
+			}, 500);
 		});
 	}, function(err) {
 		debug("done");

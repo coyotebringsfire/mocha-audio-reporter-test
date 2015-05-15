@@ -1,22 +1,25 @@
-var should=require('should'),
-	debug=require('debug')('mocha:audioreporter:test');
+var Mocha=require('mocha'),
+	sounds=require('mario-sounds');
 
-describe("audioreporter", function() {
-	var passCount=5, failCount=5;
+var mocha = new Mocha({
+    ui: 'bdd',
+    reporter: "mocha-multi",
+    reporterOptions: {
+	    "mocha-audio-reporter": {
+		    stdout: '/dev/null',
+		    options: {
+		    	onStart: sounds["smb_vine"],
+		        onPass: sounds["smb_coin"],
+		        onFail: sounds["smb_mariodie"],
+		        onSuiteFail: sounds["smb_gameover"],
+		        onSuitePass: sounds["smb_stage_clear"]
+		    }
 
-	for( i=0; i<passCount; i++) {
-		it("passing test", function doIt(done) {
-			setTimeout(function() {
-				done();
-			}, 500);
-		});	
-	}
-	for( i=0; i<failCount; i++) {
-		it("should set mongo options programmatically", function doIt(done) {
-			setTimeout(function() {
-				should.fail();
-				done();
-			}, 500);
-		});
+	    },
+	    spec: {
+		    stdout: "-"
+		}
 	}
 });
+mocha.addFile("test/index.js");
+mocha.run();

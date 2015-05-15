@@ -4,7 +4,7 @@
   "description": "tests for mocha-audio-reporter",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -R mocha-audio-reporter index.js"
+    "test": "node index.js"
   },
   "keywords": [
     "mocha",
@@ -15,6 +15,7 @@
   "license": "ISC",
   "dependencies": {
     "debug": "^2.1.3",
+    "mario-sounds": "0.0.1",
     "mocha-audio-reporter": "0.0.2",
     "mocha-multi": "^0.7.1",
     "should": "^6.0.1"

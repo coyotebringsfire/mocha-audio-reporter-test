@@ -1,5 +1,10 @@
 var Mocha=require('mocha'),
+	debug=require('debug')("mocha:audioreporter:test"),
 	sounds=require('mario-sounds');
+
+process.on('SIGABRT',function(evt) {
+	debug("%j", evt);
+});
 
 var mocha = new Mocha({
 	timeout: 10000,

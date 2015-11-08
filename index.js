@@ -14,6 +14,8 @@ var mocha = new Mocha({
 	    "mocha-audio-reporter": {
 		    stdout: '/dev/null',
 		    options: {
+		    	onPass: "pass",
+		    	onFail: "fail",
 		        onSuiteFail: sounds["smb_gameover"],
 		        onSuitePass: sounds["smb_stage_clear"]
 		    }
